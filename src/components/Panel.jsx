@@ -8,15 +8,13 @@ export default function Panel({ panelId, note, dropdowns, colors, updatePanelSta
   return (
     <>
       <div className="btn-panel-container">
+        <div className='panelHeader'>Foot switch 1: Name</div>
         <div className='flexRow'>
-          {/* <div className='panelHeader'> */}
-
-            <Action dropdowns={dropdowns} colors={colors} updatePanelState={updatePanelState}></Action>
-            <Action dropdowns={dropdowns} colors={colors} updatePanelState={updatePanelState}></Action>
-            <Action dropdowns={dropdowns} colors={colors} updatePanelState={updatePanelState}></Action>
-            {/* <NoteSection panelId={panelId} note={note}></NoteSection> */}
-          </div>
-        {/* </div> */}
+          <Action dropdowns={dropdowns} updatePanelState={updatePanelState}></Action>
+          <Action dropdowns={dropdowns} updatePanelState={updatePanelState}></Action>
+          <Action dropdowns={dropdowns} updatePanelState={updatePanelState}></Action>
+          <button>+</button>
+        </div>
       </div>
     </>
   )
