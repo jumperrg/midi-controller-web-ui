@@ -1,0 +1,13 @@
+.footercontainer {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  /* width: 900px; */
+  border-top: 1px solid #b4b4b4;
+  background-color: #e9f1f7;
+}
