@@ -4,6 +4,7 @@ import Actions from './pages/Actions';
 import WifiCard from "./pages/WifiCard";
 import Header from "./components/Header";
 import Switches from "./pages/Switches";
+import Home from "./pages/Home";
 import './App.css'
 
 const SettingsContext = createContext(null);
@@ -15,6 +16,7 @@ function App() {
 
         <Header></Header>
         <Routes>
+        <Route exact path="/" element={<Home />} />
           <Route exact path="/actions" element={<Actions />} />
           <Route exact path='/switches' element={<Switches />} />
           <Route exact path="/wificon" element={<WifiCard />} />
