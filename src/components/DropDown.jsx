@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Select from 'react-select'
+import { GlobalContext } from "../contexts/GlobalContext";
 import './DropDown.css'
 
 const bgColor = '#dde1e7';
@@ -38,13 +39,8 @@ const customStyles = {
     }),
 }
 
-export default function DropDown({ opt, name, updatePanelState }) {
+export default function DropDown({ opt, name, getChoice }) {
     const [selected, setSelected] = useState('');
-
-    const handleSelect = (event) => { // works
-        setSelected(event.value);
-        updatePanelState(name, value);
-    };
 
     const opts = opt.map((option) => {
         return { value: option, label: option }
@@ -58,7 +54,7 @@ export default function DropDown({ opt, name, updatePanelState }) {
                     styles={customStyles}
                     value={{ label: selected }} // makes it controlled
                     options={opts}
-                    onChange={handleSelect}
+                    onChange={()=>getChoice()}
                 ></Select>
             </div >
         </>

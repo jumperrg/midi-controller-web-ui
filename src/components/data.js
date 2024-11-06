@@ -163,7 +163,7 @@ export const globalState = {
     wifiPasswd: '12345678'
 };
 
-const dropdowns = [
+const action = [
     {
         name: 'On',
         opt: ['Click', 'Press', 'Release', 'Long press']
@@ -187,15 +187,7 @@ const dropdowns = [
     {
         name: 'MIDI Channel',
         opt: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-    },
-    // {
-    //     name: 'Program Change',
-    //     opt: midiValRange
-    // },
-    // {
-    //     name: 'PC value',
-    //     opt: midiValRange
-    // }
+    }
 ];
 
 const colors = [
@@ -207,37 +199,37 @@ export const panelsData = [
     {
         panelId: 'Button 0: Delay',
         note: "Clean tone + delay - crisp and clear for intros",
-        dropdowns,
+        action,
         colors
     },
     {
         panelId: 'Button 1: Lead',
         note: "Crunch rhythm - perfect for punchy riffs with attitude",
-        dropdowns,
+        action,
         colors
     },
     {
         panelId: 'Button 2: Clean',
         note: "Lead solo - searing highs that cut through the mix",
-        dropdowns,
+        action,
         colors
     },
     {
         panelId: 'Button 3: Loop',
         note: "Heavy distortion - raw power for metal and hard rock",
-        dropdowns,
+        action,
         colors
     },
     {
         panelId: 'Button 4: Reverb',
         note: "Ambient reverb - dreamy echoes for atmospheric soundscapes",
-        dropdowns,
+        action,
         colors
     },
     {
         panelId: 'Button 5: Octaver',
         note: "Warm blues - soulful and rich, ideal for expressive bends",
-        dropdowns,
+        action,
         colors
     },
 ];

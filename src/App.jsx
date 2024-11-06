@@ -1,27 +1,28 @@
-import { createContext, useContext } from 'react';
+import { createContext, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
+import { GlobalContext } from "./contexts/GlobalContext";
+import { globalState } from './components/data';
 import Actions from './pages/Actions';
 import WifiCard from "./pages/WifiCard";
 import Header from "./components/Header";
 import Switches from "./pages/Switches";
 import Home from "./pages/Home";
-import './App.css'
-
-const SettingsContext = createContext(null);
+import './App.css';
 
 function App() {
+  const [globalData, setGlobalData] = useState(globalState);
+
   return (
     <>
-      <SettingsContext.Provider value="dark">
-
+      <GlobalContext.Provider value={{ globalData, setGlobalData }}>
         <Header></Header>
         <Routes>
-        <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/actions" element={<Actions />} />
           <Route exact path='/switches' element={<Switches />} />
           <Route exact path="/wificon" element={<WifiCard />} />
         </Routes>
-      </SettingsContext.Provider>
+      </GlobalContext.Provider>
     </>
   )
 }

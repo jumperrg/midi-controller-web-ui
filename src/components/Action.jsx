@@ -1,22 +1,30 @@
-import './Action.css'
+import './Action.css';
+import { useState } from 'react';
 import DropDown from './DropDown';
-import im from '../assets/recycleBin.svg'
+import im from '../assets/recycleBin.svg';
 
-export default function Action({ dropdowns, colors, updatePanelState }) {
-	// console.log('dropdowns ', dropdowns); // ok
+export default function Action({ action }) {
+	console.log('action ', action); // ok
+	const [choice, setChoice] = useState({});
+
+	function getChoice(event){
+		console.log('event', event );
+	}
+
 	function deleteAction() {
-		console.log('click');
+		console.log('delete action');
 	}
 
 	return (
 		<>
 			<div className="grid-container">
-				{dropdowns.map((dd, i) => (
+				{action.map((dd, i) => (
 					<DropDown
 						key={i}
 						opt={dd.opt}
 						name={dd.name}
-						updatePanelState={updatePanelState} />
+						getChoice={getChoice}
+					/>
 				))}
 				<img src={im} width='24' style={{
 					justifySelf: 'end',

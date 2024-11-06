@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Panel from '../components/Panel';
+import ActionsBoard from '../components/ActionsBoard';
 import "../App.css";
 import './Actions.css';
 import { panelsData } from '../components/data'
@@ -32,14 +32,14 @@ export default function Actions() {
     return (<>
         <br></br>
         {panelsData.map((pd) => (
-            <Panel
+            <ActionsBoard
                 key={pd.panelId}
                 panelId={pd.panelId}
                 note={pd.note}
-                dropdowns={pd.dropdowns}
+                action={pd.action}
                 colors={pd.colors}
                 updatePanelState={updatePanelState}>
-            </Panel>
+            </ActionsBoard>
         ))}
         <br></br>
         <br></br>
