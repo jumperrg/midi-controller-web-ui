@@ -1,18 +1,24 @@
+/*
+	The action component represents a single action which happens after footswitch press
+	Each FS can have multiple actions, which you choose from the menus
+	The actions are storen in the array and execute in the order they are stored
+*/
+
 import './Action.css';
 import { useState } from 'react';
 import DropDown from './DropDown';
 import im from '../assets/recycleBin.svg';
 
 export default function Action({ action }) {
-	console.log('action ', action); // ok
+	// console.log('action ', action); // ok
 	const [choice, setChoice] = useState({});
 
-	function getChoice(event){
-		console.log('event', event );
+	function getChoice(event) {
+		console.log('event', event);
 	}
 
-	function deleteAction() {
-		console.log('delete action');
+	function deleteAction(e) {
+		console.log('delete action ', e);
 	}
 
 	return (

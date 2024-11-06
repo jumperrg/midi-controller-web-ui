@@ -46,6 +46,11 @@ export default function DropDown({ opt, name, getChoice }) {
         return { value: option, label: option }
     });
 
+    function changeHandler(e) {
+        setSelected(e.value);
+        getChoice(e);
+    }
+
     return (
         <>
             <div className="dropdown-container">
@@ -54,7 +59,7 @@ export default function DropDown({ opt, name, getChoice }) {
                     styles={customStyles}
                     value={{ label: selected }} // makes it controlled
                     options={opts}
-                    onChange={()=>getChoice()}
+                    onChange={(e) => changeHandler(e)}
                 ></Select>
             </div >
         </>
