@@ -17,24 +17,19 @@ export default function Action({ action }) {
 
 
 	useEffect(() => {
-		updateLabel(actionState);
-		console.log('actionState ', actionState);
-	}, [actionState]);
-
-
-	// return json with the selected options
-	function getChoice(data) {
-		// setActionState({ ...actionState, ...event })
-		console.log('choice ', data);
-		// setCurrChoice(event.value);
-	}
+		console.log('currChoice ', currChoice);
+		setActionState({ ...actionState, ...currChoice });
+		// updateLabel(actionState);
+	}, [currChoice]);
 
 	function updateLabel(labelName) {
+		console.log(labelName);
+
 		//if the name is 'send' change the label of the next dropdown
-		if (labelName.value === 'Note On') {
-			console.log('note on ', labelName);
-			console.log('action ', action);
-		}
+		// if (labelName.Send === 'Note On') {
+		// 	console.log('note on ', labelName);
+		// 	console.log('action ', action);
+		// }
 	}
 
 	function deleteAction(e) {
@@ -49,7 +44,7 @@ export default function Action({ action }) {
 						key={i}
 						opt={dd.opt}
 						name={dd.name}
-						getChoice={getChoice}
+						getChoice={setCurrChoice}
 						onChange={updateLabel}
 					/>
 				))}

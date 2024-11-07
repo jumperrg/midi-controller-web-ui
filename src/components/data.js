@@ -144,7 +144,7 @@ export const globalState = {
         name: 'chorus',
         colorOn: [255, 255, 255],
         colorOff: [0, 0, 0],
-        action: 'click',
+        actionMenu: 'click',
         state: 'on',
         type: 'latch',
         sequence: 'off',
@@ -153,7 +153,7 @@ export const globalState = {
         name: 'delay',
         colorOn: [200, 200, 200],
         colorOff: [0, 0, 0],
-        action: 'press',
+        actionMenu: 'press',
         state: 'off',
         type: 'momentary',
         sequence: 'off',
@@ -163,7 +163,7 @@ export const globalState = {
     wifiPasswd: '12345678'
 };
 
-const action = [
+const actionMenu = [
     {
         name: 'On',
         opt: ['Click', 'Press', 'Release', 'Long press']
@@ -190,11 +190,11 @@ const action = [
     }
 ];
 
-const actionRes = {
+const chosenAction = {
     on: 'click',
     send: 'noteon',
-    cmdType: 0,
-    cmdValue: 6,
+    cmdNum: 0,
+    cmdVal: 6,
     midiChannel: 5,
 }
 
@@ -207,37 +207,37 @@ export const panelsData = [
     {
         panelId: 'Button 0: Delay',
         note: "Clean tone + delay - crisp and clear for intros",
-        action,
+        actionMenu,
         colors
     },
     {
         panelId: 'Button 1: Lead',
         note: "Crunch rhythm - perfect for punchy riffs with attitude",
-        action,
+        actionMenu,
         colors
     },
     {
         panelId: 'Button 2: Clean',
         note: "Lead solo - searing highs that cut through the mix",
-        action,
+        actionMenu,
         colors
     },
     {
         panelId: 'Button 3: Loop',
         note: "Heavy distortion - raw power for metal and hard rock",
-        action,
+        actionMenu,
         colors
     },
     {
         panelId: 'Button 4: Reverb',
         note: "Ambient reverb - dreamy echoes for atmospheric soundscapes",
-        action,
+        actionMenu,
         colors
     },
     {
         panelId: 'Button 5: Octaver',
         note: "Warm blues - soulful and rich, ideal for expressive bends",
-        action,
+        actionMenu,
         colors
     },
 ];

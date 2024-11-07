@@ -39,7 +39,7 @@ export default function Actions() {
                 key={pd.panelId}
                 panelId={pd.panelId}
                 note={pd.note}
-                action={pd.action}
+                action={pd.actionMenu}
                 colors={pd.colors}
                 updatePanelState={updatePanelState}>
             </ActionsBoard>
