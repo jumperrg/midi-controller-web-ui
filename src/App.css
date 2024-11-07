@@ -1,7 +1,8 @@
 #root {
   /* max-width: 1280px; */
-  margin: 0 auto;
-  padding: 2rem;
+  width:100%;
+  /* margin: 0 auto; */
+  padding-bottom: 2rem;
   text-align: center;
 }
 
@@ -76,4 +77,10 @@ button:hover {
 
 .buttonsContainer {
   display: flex;
+}
+
+.head {
+  width: 100%;
+  position: fixed;
+  border: 1px solid red;
 }

@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <GlobalContext.Provider value={{ globalData, setGlobalData }}>
-        <Header></Header>
+        <Header className="head"></Header>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/actions" element={<Actions />} />

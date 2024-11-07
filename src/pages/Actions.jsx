@@ -31,6 +31,9 @@ export default function Actions() {
 
     return (<>
         <br></br>
+        <div className='headerPlaceHolder'></div>
+        <div>Here is your main page for settin up the device</div>
+        <div>Update the params before editing them</div>
         {panelsData.map((pd) => (
             <ActionsBoard
                 key={pd.panelId}

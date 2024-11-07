@@ -11,10 +11,12 @@ import im from '../assets/recycleBin.svg';
 
 export default function Action({ action }) {
 	// console.log('action ', action); // ok
-	const [choice, setChoice] = useState({});
+	const [actionState, setActionState] = useState({});
 
 	function getChoice(event) {
-		console.log('event', event);
+		setActionState({ ...actionState, ...event })
+		// console.log('event ', event.value);
+		console.log('actionState ', actionState);
 	}
 
 	function deleteAction(e) {
