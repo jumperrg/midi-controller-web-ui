@@ -48,7 +48,7 @@ export default function DropDown({ opt, name, getChoice }) {
 
     function changeHandler(e) {
         setSelected(e.value);
-        getChoice(e);
+        getChoice({ [name]: e.value });
     }
 
     return (

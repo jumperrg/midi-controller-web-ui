@@ -190,6 +190,14 @@ const action = [
     }
 ];
 
+const actionRes = {
+    on: 'click',
+    send: 'noteon',
+    cmdType: 0,
+    cmdValue: 6,
+    midiChannel: 5,
+}
+
 const colors = [
     { name: 'Color On' },
     { name: 'Color Off' }
