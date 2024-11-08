@@ -27,8 +27,8 @@ export default function ActionsBoard({ panelId, note, action, colors, updatePane
           <Action action={action} updatePanelState={updatePanelState}></Action>
           <SeparatorV></SeparatorV>
           <Action action={action} updatePanelState={updatePanelState}></Action>
-          <SeparatorV></SeparatorV>
-          <div>
+          {/* <SeparatorV></SeparatorV> */}
+          <div className='btnContainer'>
             <button>+</button>
             <button onClick={testHandler}>test</button>
           </div>
