@@ -10,26 +10,20 @@ import DropDown from './DropDown';
 import im from '../assets/recycleBin.svg';
 
 export default function Action({ action }) {
-	// let
-	// console.log('action ', action); // ok
+	console.log('action ', action);
+	
+	const [labels, setLabels] = useState([])
 	const [actionState, setActionState] = useState({});
-	const [currChoice, setCurrChoice] = useState({});
-
+	const [currChoice, setCurrChoice] = useState({});	
 
 	useEffect(() => {
-		console.log('currChoice ', currChoice);
-		setActionState({ ...actionState, ...currChoice });
-		// updateLabel(actionState);
+		const updatedState = { ...actionState, ...currChoice };
+		console.log('updatedState ', updatedState);
+		setActionState(updatedState);
 	}, [currChoice]);
 
 	function updateLabel(labelName) {
-		console.log(labelName);
 
-		//if the name is 'send' change the label of the next dropdown
-		// if (labelName.Send === 'Note On') {
-		// 	console.log('note on ', labelName);
-		// 	console.log('action ', action);
-		// }
 	}
 
 	function deleteAction(e) {
@@ -42,7 +36,7 @@ export default function Action({ action }) {
 				{action.map((dd, i) => (
 					<DropDown
 						key={i}
-						opt={dd.opt}
+						opts={dd.opts}
 						name={dd.name}
 						getChoice={setCurrChoice}
 						onChange={updateLabel}

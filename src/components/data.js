@@ -166,27 +166,27 @@ export const globalState = {
 const actionMenu = [
     {
         name: 'On',
-        opt: ['Click', 'Press', 'Release', 'Long press']
+        opts: ['Click', 'Press', 'Release', 'Long press']
     },
     {
         name: 'Send',
-        opt: [
+        opts: [
             'Note On', 'Note Off', 'Control Change',
             'Program Change', 'Tap Tempo', 'Pitch Bend',
             'Aftertouch (Channel pressure)', 'none'
         ]
     },
     {
-        name: 'Control Change',
-        opt: midiCC
+        name: 'MIDI Type',
+        opts: midiCC
     },
     {
         name: 'CC value',
-        opt: midiValRange
+        opts: midiValRange
     },
     {
         name: 'MIDI Channel',
-        opt: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        opts: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     }
 ];
 

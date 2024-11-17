@@ -39,10 +39,10 @@ const customStyles = {
     }),
 }
 
-export default function DropDown({ opt, name, getChoice }) {
+export default function DropDown({ opts, name, getChoice }) {
     const [selected, setSelected] = useState('');
 
-    const opts = opt.map((option) => {
+    opts = opts.map((option) => {
         return { value: option, label: option }
     });
 
