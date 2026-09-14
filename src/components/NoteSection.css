@@ -12,6 +12,6 @@
 .horisontal-line {
   width: 380px;
   height: 1px;
-  background-color: #9a9a9a;
+  background-color: var(--color-border);
   margin: 8px;
 }

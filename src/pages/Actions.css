@@ -8,6 +8,6 @@
   right: 0;
   height: 80px;
   /* width: 900px; */
-  border-top: 1px solid #b4b4b4;
-  background-color: #e9f1f7;
+  border-top: 1px solid var(--color-border-strong);
+  background-color: var(--color-bg-alt);
 }

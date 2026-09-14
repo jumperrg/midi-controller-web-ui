@@ -17,9 +17,10 @@ body {
   justify-content: center;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  color: #3f4d5c;
+  color: var(--color-text);
   /* max-width: 100%; */
-  background-color: #dde1e7;
+  background-color: var(--color-bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 
@@ -29,15 +30,16 @@ input {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 6px;
-  border: 2px solid gray;
+  border: 2px solid var(--color-border);
   font-size: 16px;
-  background-color: #e9f1f7;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
 }
 
 button {
-  background-color: #5535f2;
+  background-color: var(--color-accent);
   border: none;
-  color: #e9f1f7;
+  color: var(--color-accent-contrast);
   padding: 15px 32px;
   text-align: center;
   /* text-decoration: none; */
@@ -46,10 +48,11 @@ button {
   margin: 18px;
   border-radius: 6px;
   max-width: 300px;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #6144f2;
+  background-color: var(--color-accent-hover);
 }
 
 .toggle-password {

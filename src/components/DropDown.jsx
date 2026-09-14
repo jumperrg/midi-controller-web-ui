@@ -3,7 +3,7 @@ import Select from 'react-select'
 import { GlobalContext } from "../contexts/GlobalContext";
 import './DropDown.css'
 
-const bgColor = '#dde1e7';
+const bgColor = 'var(--color-surface)';
 const customStyles = {
     control: (provided, state) => ({
         ...provided,
@@ -14,24 +14,24 @@ const customStyles = {
     menu: (provided) => ({
         ...provided,
         backgroundColor: bgColor,
-        border: '1px solid grey'
+        border: '1px solid var(--color-border)'
     }),
     option: (provided, state) => ({
         ...provided,
         backgroundColor: state.isFocused ? bgColor : bgColor,
-        color: '#575757',
+        color: 'var(--color-text-muted)',
     }),
     singleValue: (provided) => ({
         ...provided,
-        color: '#575757',
+        color: 'var(--color-text-muted)',
     }),
     input: (provided) => ({
         ...provided,
-        color: 'grey', // cursor color
+        color: 'var(--color-text-muted)', // cursor color
     }),
     dropdownIndicator: (provided) => ({
         ...provided,
-        color: 'grey',
+        color: 'var(--color-text-muted)',
     }),
     // hide the indicator separator
     indicatorSeparator: () => ({
