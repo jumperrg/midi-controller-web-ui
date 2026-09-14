@@ -1,0 +1,48 @@
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 56px;
+  height: 30px;
+  margin: 0;
+  border-radius: 999px;
+  border: 1px solid var(--navbar-border);
+  padding: 0;
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.18);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  max-width: none;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.theme-toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-surface-raised);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+.theme-toggle[data-theme='dark'] .theme-toggle-knob {
+  transform: translateX(26px);
+}

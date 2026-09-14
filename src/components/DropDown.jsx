@@ -3,35 +3,44 @@ import Select from 'react-select'
 import { GlobalContext } from "../contexts/GlobalContext";
 import './DropDown.css'
 
+const transition = 'background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease';
 const bgColor = 'var(--color-surface)';
+const borderColor = 'var(--color-border)';
+const textColor = 'var(--color-text-muted)';
+
 const customStyles = {
-    control: (provided, state) => ({
+    control: (provided) => ({
         ...provided,
         backgroundColor: bgColor,
         border: 'none',
         boxShadow: 'none',
+        transition,
     }),
     menu: (provided) => ({
         ...provided,
         backgroundColor: bgColor,
-        border: '1px solid var(--color-border)'
+        border: `1px solid ${borderColor}`,
+        transition,
     }),
-    option: (provided, state) => ({
+    option: (provided) => ({
         ...provided,
-        backgroundColor: state.isFocused ? bgColor : bgColor,
-        color: 'var(--color-text-muted)',
+        backgroundColor: bgColor,
+        color: textColor,
+        transition,
     }),
     singleValue: (provided) => ({
         ...provided,
-        color: 'var(--color-text-muted)',
+        color: textColor,
+        transition,
     }),
     input: (provided) => ({
         ...provided,
-        color: 'var(--color-text-muted)', // cursor color
+        color: textColor, // cursor color
     }),
     dropdownIndicator: (provided) => ({
         ...provided,
-        color: 'var(--color-text-muted)',
+        color: textColor,
+        transition,
     }),
     // hide the indicator separator
     indicatorSeparator: () => ({

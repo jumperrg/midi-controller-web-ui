@@ -9,6 +9,10 @@
 	box-shadow: var(--shadow-neu-light), var(--shadow-neu-dark);
 }
 
+.toggle-switch {
+	margin: 6px 0;
+}
+
 .btn_label {
 	text-align: center;
 	border: 1px solid var(--color-border);
