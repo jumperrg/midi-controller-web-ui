@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 import DropDown from './DropDown';
 import im from '../assets/recycleBin.svg';
 
-export default function Action({ action }) {
+export default function Action({ action, onDelete }) {
 	// console.log('action ', action);
 	
 	const [labels, setLabels] = useState([])
@@ -29,7 +29,7 @@ export default function Action({ action }) {
 	}
 
 	function deleteAction(e) {
-		console.log('delete action ', e);
+		onDelete?.();
 	}
 
 	return (
