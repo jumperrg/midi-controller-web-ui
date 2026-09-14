@@ -1,13 +1,101 @@
+.add-panel-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 32px 32px;
+}
+
+.add-panel-button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0;
+  padding: 16px 24px;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 2px dashed var(--color-border);
+  border-radius: 10px;
+  box-shadow: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.add-panel-button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+.footerPlaceHolder {
+  width: 100%;
+  height: 72px;
+}
+
 .footercontainer {
   display: flex;
   position: fixed;
   justify-content: center;
   align-items: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  /* width: 900px; */
-  border-top: 1px solid var(--color-border-strong);
-  background-color: var(--color-bg-alt);
+  gap: 24px;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-navbar);
+  z-index: 1000;
+}
+
+.footercontainer .preset-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footercontainer .preset-nav button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footercontainer .preset-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-header);
+  white-space: nowrap;
+}
+
+.footercontainer .footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footercontainer .footer-actions button {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+.footercontainer .footer-divider {
+  width: 1px;
+  height: 28px;
+  background-color: var(--color-border);
+  flex-shrink: 0;
 }

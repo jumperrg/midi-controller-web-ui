@@ -4,16 +4,30 @@ import { useState, useRef, useEffect } from 'react';
 import Action from './Action';
 import SeparatorV from './SeparatorV'
 import NoteSection from './NoteSection';
+import im from '../assets/recycleBin.svg';
 
-export default function ActionsBoard({ panelId, name, note, action, colors, updatePanelState, onRename }) {
+export default function ActionsBoard({ panelId, buttonIndex, name, note, action, colors, updatePanelState, onRename, onRenumber, onDeletePanel, initialActionCount = 3 }) {
   // console.log(panelId);
-  const [actions, setActions] = useState([0, 1, 2]);
-  const nextId = useRef(3);
+  const [actions, setActions] = useState(() =>
+    Array.from({ length: initialActionCount }, (_, i) => i)
+  );
+  const nextId = useRef(initialActionCount);
   const [nameDraft, setNameDraft] = useState(name);
+  const [numberDraft, setNumberDraft] = useState(String(buttonIndex));
+  const [isFiring, setIsFiring] = useState(false);
+  const firingTimeout = useRef(null);
 
   useEffect(() => {
     setNameDraft(name);
   }, [name]);
+
+  useEffect(() => {
+    setNumberDraft(String(buttonIndex));
+  }, [buttonIndex]);
+
+  useEffect(() => {
+    return () => clearTimeout(firingTimeout.current);
+  }, []);
 
   const commitName = () => {
     const trimmed = nameDraft.trim();
@@ -24,8 +38,19 @@ export default function ActionsBoard({ panelId, name, note, action, colors, upda
     }
   }
 
+  const commitNumber = () => {
+    const parsed = parseInt(numberDraft, 10);
+    if (Number.isInteger(parsed) && parsed >= 0) {
+      onRenumber?.(parsed);
+    }
+    setNumberDraft(String(buttonIndex));
+  }
+
   const testHandler = (e) => {
     console.log('getPanelData', e.target);
+    setIsFiring(true);
+    clearTimeout(firingTimeout.current);
+    firingTimeout.current = setTimeout(() => setIsFiring(false), 300);
   }
 
   const addAction = () => {
@@ -33,13 +58,32 @@ export default function ActionsBoard({ panelId, name, note, action, colors, upda
   }
 
   const deleteAction = (id) => {
-    setActions(actions.filter((a) => a !== id));
+    const remaining = actions.filter((a) => a !== id);
+    if (remaining.length === 0) {
+      onDeletePanel?.();
+      return;
+    }
+    setActions(remaining);
   }
 
   return (
     <>
       <div className="btn-panel-container">
         <div className='panelHeader'>
+          <span className='panelHeaderPrefix'>Button</span>
+          <input
+            className='panelHeaderNumberInput'
+            type='number'
+            min='0'
+            value={numberDraft}
+            onChange={(e) => setNumberDraft(e.target.value)}
+            onBlur={commitNumber}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') e.target.blur();
+              if (e.key === 'Escape') { setNumberDraft(String(buttonIndex)); e.target.blur(); }
+            }}
+          />
+          <span className='panelHeaderPrefix'>:</span>
           <input
             className='panelHeaderInput'
             value={nameDraft}
@@ -49,6 +93,13 @@ export default function ActionsBoard({ panelId, name, note, action, colors, upda
               if (e.key === 'Enter') e.target.blur();
               if (e.key === 'Escape') { setNameDraft(name); e.target.blur(); }
             }}
+          />
+          <img
+            src={im}
+            width='20'
+            className='panelHeaderDelete'
+            title='Delete footswitch'
+            onClick={() => onDeletePanel?.()}
           />
         </div>
         <div className='flexRow'>
@@ -62,7 +113,12 @@ export default function ActionsBoard({ panelId, name, note, action, colors, upda
           ))}
           <div className='btnContainer'>
             <button onClick={addAction}>Add action</button>
-            <button onClick={testHandler}>Test Fire </button>
+            <button
+              className={`btn-secondary${isFiring ? ' is-firing' : ''}`}
+              onClick={testHandler}
+            >
+              Test Fire
+            </button>
           </div>
         </div>
       </div>

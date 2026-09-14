@@ -25,13 +25,26 @@
   align-items: center;
   justify-content: flex-start;
   padding-left: 16px;
-  background-color: var(--color-surface-alt);
+  padding-right: 16px;
+  background-color: var(--color-surface);
   width: 100%;
   height: 48px;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 1px solid var(--color-border-strong);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid var(--color-border-soft);
   color: var(--color-text-header);
   font-size: large;
+}
+
+.panelHeaderDelete {
+  margin-left: auto;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.panelHeaderDelete:hover {
+  opacity: 1;
 }
 
 /* .vertical-line {
@@ -40,6 +53,52 @@
   background-color: #404483;
   margin: 10px;
 } */
+
+.panelHeaderPrefix {
+  font-weight: 600;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.panelHeaderPrefix:first-child {
+  margin-right: 6px;
+}
+
+.panelHeaderPrefix:last-of-type {
+  margin-right: 4px;
+}
+
+.panelHeaderNumberInput {
+  font-size: large;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text-header);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 4px 4px;
+  background-color: transparent;
+  cursor: text;
+  width: 44px;
+  text-align: center;
+  -moz-appearance: textfield;
+  transition: background-color 0.15s ease;
+}
+
+.panelHeaderNumberInput::-webkit-outer-spin-button,
+.panelHeaderNumberInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.panelHeaderNumberInput:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.panelHeaderNumberInput:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
 .panelHeaderInput {
   font-size: large;
@@ -67,12 +126,40 @@
 }
 
 .btnContainer{
-  border: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:flex-end;
-  border-radius: 8px;
-  margin:16px;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 16px;
   height: 210px;
+}
+
+.btnContainer button {
+  margin: 0;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnContainer button.btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btnContainer button.btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.btnContainer button.btn-secondary.is-firing {
+  background-color: #34c759;
+  border-color: #34c759;
+  color: #ffffff;
+  transition: none;
 }

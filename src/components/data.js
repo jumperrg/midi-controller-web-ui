@@ -205,37 +205,43 @@ const colors = [
 
 export const panelsData = [
     {
-        panelId: 'Button 0: Delay',
+        panelId: 'panel0',
+        label: 'Delay',
         note: "Clean tone + delay - crisp and clear for intros",
         actionMenu,
         colors
     },
     {
-        panelId: 'Button 1: Lead',
+        panelId: 'panel1',
+        label: 'Lead',
         note: "Crunch rhythm - perfect for punchy riffs with attitude",
         actionMenu,
         colors
     },
     {
-        panelId: 'Button 2: Clean',
+        panelId: 'panel2',
+        label: 'Clean',
         note: "Lead solo - searing highs that cut through the mix",
         actionMenu,
         colors
     },
     {
-        panelId: 'Button 3: Loop',
+        panelId: 'panel3',
+        label: 'Loop',
         note: "Heavy distortion - raw power for metal and hard rock",
         actionMenu,
         colors
     },
     {
-        panelId: 'Button 4: Reverb',
+        panelId: 'panel4',
+        label: 'Reverb',
         note: "Ambient reverb - dreamy echoes for atmospheric soundscapes",
         actionMenu,
         colors
     },
     {
-        panelId: 'Button 5: Octaver',
+        panelId: 'panel5',
+        label: 'Octaver',
         note: "Warm blues - soulful and rich, ideal for expressive bends",
         actionMenu,
         colors
