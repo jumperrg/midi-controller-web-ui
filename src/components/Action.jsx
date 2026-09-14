@@ -10,11 +10,13 @@ import DropDown from './DropDown';
 import im from '../assets/recycleBin.svg';
 
 export default function Action({ action }) {
-	console.log('action ', action);
+	// console.log('action ', action);
 	
 	const [labels, setLabels] = useState([])
 	const [actionState, setActionState] = useState({});
 	const [currChoice, setCurrChoice] = useState({});	
+
+	let labelsArr = action[1].opts;
 
 	useEffect(() => {
 		const updatedState = { ...actionState, ...currChoice };
