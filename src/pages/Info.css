@@ -1,0 +1,23 @@
+.info-container {
+  max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 12px;
+}
+
+.info-container > div {
+  text-align: left;
+}
+
+.info-container h1 {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.info-footer {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 8px;
+}

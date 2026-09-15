@@ -8,6 +8,8 @@ import WifiCard from "./pages/WifiCard";
 import Header from "./components/Header";
 import Switches from "./pages/Switches";
 import Home from "./pages/Home";
+import Info from "./pages/Info";
+import Settings from "./pages/Settings";
 import './App.css';
 
 const THEME_STORAGE_KEY = 'mfweb-theme';
@@ -40,6 +42,8 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/actions" element={<Actions />} />
             <Route exact path='/switches' element={<Switches />} />
+            <Route exact path="/info" element={<Info />} />
+            <Route exact path="/settings" element={<Settings />} />
             <Route exact path="/wificon" element={<WifiCard />} />
           </Routes>
         </GlobalContext.Provider>

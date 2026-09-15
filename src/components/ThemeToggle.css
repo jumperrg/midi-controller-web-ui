@@ -9,7 +9,7 @@
   border: 1px solid var(--navbar-border);
   padding: 0;
   cursor: pointer;
-  background-color: rgba(128, 128, 128, 0.18);
+  background-color: var(--color-surface-alt);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
   max-width: none;
